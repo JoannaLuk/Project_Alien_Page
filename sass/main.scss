@@ -1,0 +1,310 @@
+@import 'partials/reset';
+@import 'modules/fonts';
+@import 'modules/variables';
+@import 'modules/keyframes';
+
+body {
+	position: relative;
+	overflow-x: hidden;
+}
+%section {
+	width: 100%;
+}
+
+.hidden {
+	display: none;
+}
+
+%container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.cursor {
+	cursor: url(../images/aim.png);
+}
+//Header styles
+
+.header {
+	@extend %section;
+	height: 280px;
+	background-color: $headeColor;
+	display: flex;
+	justify-content: center;
+}
+
+.alien-main {
+	@extend %container;
+    background-image: url(../images/webdesign5.png);
+    height: 280px;
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+//Menu style
+.nav{
+	@extend %section;
+}
+.menu{
+	@extend %container;
+	display:flex;
+	justify-content: space-between;
+	font-family: $mainFont;
+	font-weight: bold;
+
+	li {
+		padding: 20px 30px;
+		display: flex;
+	}
+
+	img {
+		width: 40px;
+		height: 40px;
+		padding-right: 10px;
+	}
+
+	a {
+		text-decoration: none;
+    	color: $headeColor;
+		display: flex;
+    	align-items: center;
+	}
+}
+
+//Home
+#home {
+	@extend %section;
+	background-color: $headeColor;
+	color: white;
+	display: flex;
+	align-items: center;
+}
+
+.home {
+	@extend %container;
+	height: 300px;
+	margin: 0 auto;
+	padding: 30px 0;
+	font-family: $mainFont;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+
+	h3 {
+		font-size: 5em;
+		text-align: center;
+		padding: 15px 0;
+	}
+	h2 {
+		font-size: 3em;
+		text-align: center;
+		padding: 15px 0;
+	}
+
+	img {
+	    width: 150px;
+	    position: absolute;
+	    top: 48%;
+	    left: -10%;
+        cursor: pointer;
+	}
+}
+
+
+
+
+//About section
+#about {
+	height: 335px;
+	@extend %section;
+	.about {
+		@extend %container;
+		margin: 0 auto;
+		padding: 30px 0;
+		font-family: $mainFont;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+
+		img {
+			height: 200px;
+		}
+		h3 {
+			font-size: 2.5em;
+			text-align: center;
+			padding: 15px 0;
+		}
+		h2 {
+			font-size: 1.5em;
+			text-align: center;
+			padding: 15px 0;
+		}
+		.friendAlienClicked {
+			height: 130px;
+		    position: absolute;
+		    top: 75%;
+		}
+	}
+}
+
+//Skills
+#skills {
+	background-color: $headeColor;
+	@extend %section;
+	h3 {
+		font-family: $mainFont;
+		color: #fff;
+		font-size: 2em;
+		text-align: center;
+		padding: 20px 0;
+	}
+	.container {
+		@extend %container;
+	}
+}
+
+.skills {	
+	width: 100%;
+	height: 200px;
+	padding: 30px 0;
+	font-family: $mainFont;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+	.hero {
+		width: 15%;
+	}
+	.power {
+		width: 15%;
+	}
+}
+
+
+//Portfolio
+#portfolio {
+	height: 500px;
+	@extend %section;
+}
+.portfolio{
+	@extend %container;
+	height: 300px;
+	padding: 30px;
+	font-family: $mainFont;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	span {
+		text-align: center;
+		padding: 0 0 30px 0;
+		font-size: 2em;
+		line-height: 1.5em;
+	}
+
+}
+
+.teleport {
+	height: 100px;
+	width: 150px;
+	border-radius: 25px;
+	background-color: red;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: $headeColor;
+	text-decoration: none;
+
+	i, span {
+		font-size: 1em;
+	}
+}
+
+
+//Contact
+
+#contact {
+	@extend %section;
+	background-color: $headeColor;
+	height: 500px;
+}
+
+.contact {
+	@extend %container;
+	font-family: $mainFont;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+
+	span{
+		font-size: 1.25em;
+		line-height: 2em;
+		color: #fff;
+		text-align: center;
+		padding: 50px 0;
+		&:first-child {
+		padding-top: 60px;
+		}
+	}
+
+	.fa {
+		color: #fff;
+		align-self: center;
+		font-size: 4em;
+
+		&:hover {
+			color: $iconMail;
+			text-shadow: 0 0 5px $iconMail;
+		}
+	}
+}
+
+.purpleMonster {
+    height: 250px;
+    position: absolute;
+    top: -192px;
+    cursor: url(../images/aim.png);
+}
+
+.littleAlien {
+	width: 100px;
+	position: absolute;
+	top: 126px;
+    right: 30px;
+}
+
+//To top
+.toTop {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	text-decoration: none;
+	color: $toTop;
+	border-radius: 100%;
+}
+
+.alien-move-range {
+	position: absolute;
+	overflow: hidden;
+	top:0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
+
+}
+.flying-alien {
+	background-image: url(../images/alien-pick.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	display: none;
+	width: 200px;
+	height: 210px;
+	z-index: 999;
+}
