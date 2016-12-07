@@ -117,35 +117,47 @@ body {
 
 //About section
 #about {
-	height: 335px;
+	min-height: 335px;
+	overflow: auto;
 	@extend %section;
 	.about {
 		@extend %container;
 		margin: 0 auto;
 		padding: 30px 0;
 		font-family: $mainFont;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+		// display: flex;
+		// flex-direction: column;
+		// align-items: center;
 		position: relative;
 
 		img {
 			height: 200px;
+			display: inline-block;
 		}
 		h3 {
 			font-size: 2.5em;
 			text-align: center;
 			padding: 15px 0;
 		}
+	}
+	
+	.dialogMain {
+		width: 100%;
+		display: flex;
+	}
+	.dialog{
+		width: 50%;
+		margin: 30px auto;	
 		h2 {
 			font-size: 1.5em;
 			text-align: center;
-			padding: 15px 0;
+			padding: 15px 10px;
+			background-color: $alienBlue;
+			border-radius: 30px;
 		}
-		.friendAlienClicked {
-			height: 130px;
-		    position: absolute;
-		    top: 75%;
+		span {
+			font-size: 1.2em;
+			padding: 20px 40px;
 		}
 	}
 }
@@ -268,7 +280,6 @@ body {
     height: 250px;
     position: absolute;
     top: -192px;
-    cursor: url(../images/aim.png);
 }
 
 .littleAlien {
@@ -307,4 +318,5 @@ body {
 	width: 200px;
 	height: 210px;
 	z-index: 999;
+	cursor: url(../images/aim.png) 30 30, auto;
 }

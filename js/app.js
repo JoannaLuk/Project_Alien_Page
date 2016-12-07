@@ -13,11 +13,11 @@ $(function(){
 	console.log(hero, power);
 
 
-	friendAlien.on('click', function(){
-		info.toggleClass('hidden');
-		ask.toggleClass('hidden');
-		friendAlien.toggleClass('friendAlienClicked');
-	})
+	// friendAlien.on('click', function(){
+	// 	info.toggleClass('hidden');
+	// 	ask.toggleClass('hidden');
+	// 	friendAlien.toggleClass('friendAlienClicked');
+	// })
 
 		power.on('mouseenter', function(){
 			$(this).addClass('hidden');
@@ -36,10 +36,10 @@ $(function(){
 
 function shootAlien() {
 
-	ufo.on('mouseenter', function(){
-		console.log('over');
-		$(this).css('cursor', 'pointer');
-	});
+	// ufo.on('mouseenter', function(){
+	// 	console.log('over');
+	// 	$(this).css('cursor', 'pointer');
+	// });
 	ufo.on('click', function(){
 		ufo.stop();
 		clearInterval(intervalAlien);
@@ -55,9 +55,9 @@ function test () {
 }
 
 
-var intervalAlien = setInterval(flyAlien, 15000);
+// var intervalAlien = setInterval(flyAlien, 15000);
 
-shootAlien();
+// shootAlien();
 });
 
 
