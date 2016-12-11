@@ -12,34 +12,36 @@ $(function(){
 	var fluffy = $('.littleAlien');
 	console.log(hero, power);
 
+	power.on('mouseenter', function(){
+		$(this).addClass('hidden');
+		$(this).prev().removeClass('hidden');
+	});
 
-	// friendAlien.on('click', function(){
-	// 	info.toggleClass('hidden');
-	// 	ask.toggleClass('hidden');
-	// 	friendAlien.toggleClass('friendAlienClicked');
-	// })
-
-		power.on('mouseenter', function(){
-			$(this).addClass('hidden');
-			$(this).prev().removeClass('hidden');
-		});
-
-		hero.on('mouseleave', function(){
-			$(this).addClass('hidden');
-			$(this).next().removeClass('hidden');
-		});
+	hero.on('mouseleave', function(){
+		$(this).addClass('hidden');
+		$(this).next().removeClass('hidden');
+	});
 
 	email.on('mouseover', function(){
 		fluffy.effect( "bounce", {times:3}, 300 );
 	});
+	
 
+/*********** Scroll ***********/
+var menu = $('.menu');
+var menuItem = menu.find('a');
+console.log(menuItem);
 
+menuItem.on('click', function(e){
+	e.preventDefault();
+	var href = $(this).attr('href');
+	$('html, body').animate({
+		scrollTop: $(href).offset().top}, 2000);
+});
+
+/*********** Shoot Alien ***********/
 function shootAlien() {
 
-	// ufo.on('mouseenter', function(){
-	// 	console.log('over');
-	// 	$(this).css('cursor', 'pointer');
-	// });
 	ufo.on('click', function(){
 		ufo.stop();
 		clearInterval(intervalAlien);
@@ -49,20 +51,29 @@ function shootAlien() {
 
 	});
 };
-test();
-function test () {
-	console.log('test');
-}
+
+/*********** Dialog ***********/
+	var dialog = $('.dialog');
+	var info = dialog.find('.info');
+	var yes = dialog.find('.yes');
+	var no = dialog.find('.no');
+	
+	yes.on('click', function(){
+		console.log('sth');
+	});	
 
 
 // var intervalAlien = setInterval(flyAlien, 15000);
 
 // shootAlien();
+
+
 });
 
 
-//Funkcje
+/*********** Functions ***********/
 
+//Flying alien
 function flyAlien() {
 	var q = $({});
 	var ufo = $('.flying-alien');
@@ -176,6 +187,7 @@ function flyAlien() {
 
 }
 
+//Flying alien animation queue
 function animToQueue(theQueue, element, animationprops, time) {
     theQueue.queue(function(next) {
         element.animate(animationprops, time, next);

@@ -7,6 +7,7 @@ body {
 	position: relative;
 	overflow-x: hidden;
 }
+
 %section {
 	width: 100%;
 }
@@ -23,8 +24,8 @@ body {
 .cursor {
 	cursor: url(../images/aim.png);
 }
-//Header styles
 
+//Header styles
 .header {
 	@extend %section;
 	height: 280px;
@@ -299,6 +300,8 @@ body {
 	border-radius: 100%;
 }
 
+
+//Flying alien
 .alien-move-range {
 	position: absolute;
 	overflow: hidden;
