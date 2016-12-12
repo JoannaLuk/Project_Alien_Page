@@ -23,7 +23,7 @@ $(function(){
 	});
 
 	email.on('mouseover', function(){
-		fluffy.effect( "bounce", {times:3}, 300 );
+		fluffy.effect( "bounce", {times:3}, 800 );
 	});
 	
 
@@ -36,8 +36,16 @@ menuItem.on('click', function(e){
 	e.preventDefault();
 	var href = $(this).attr('href');
 	$('html, body').animate({
-		scrollTop: $(href).offset().top}, 2000);
+		scrollTop: $(href).offset().top}, 'slow');
 });
+
+/*********** Scroll to top ***********/
+var toTop = $('.toTop');
+toTop.on('click', function(e){
+	e.preventDefault();
+	$('html, body').animate({
+		scrollTop: 0}, 'slow');
+})
 
 /*********** Shoot Alien ***********/
 function shootAlien() {
@@ -59,7 +67,26 @@ function shootAlien() {
 	var no = dialog.find('.no');
 	
 	yes.on('click', function(){
-		console.log('sth');
+		
+		// if(yesText == 'Yes'){
+		// 	info.text('Greate! Ask then!');
+		// 	yes.text('Who is she?');
+		// 	no.text('Why programming?');
+		// }
+
+		// if(yesText == 'Who is she?'){
+		// 	info.text('She is an ambisious young one, who is looking to be beter!');
+		// 	yes.text('How did she started?');
+		// }
+
+		// if(yesText == 'How did she started?'){
+		// 	info.text('Well, she wanted to try sth new in her life and fall in love with web aplications and programming. And now she is keen about it!');
+		// 	yes.text('Thx! Where can I find more info about Asia?');
+		// }
+
+		// if(yesText == 'Thx! Where can I find more info about Asia?'){
+		// 	info.text('Sure! At the bottom of the page, you can find links to her GitHub account and LinkedIn! Don\'t be shy. Go and check it!');
+		// }
 	});	
 
 
